@@ -1,0 +1,70 @@
+<SettingsScreen>:
+
+    ip_input: ip_input
+	port_input: port_input
+	errors_label: errors_label
+	connect_button: connect_button
+
+    BoxLayout:
+	    orientation: 'vertical'
+	    padding: 20
+	    spacing: 20
+
+	    Label:
+	    	text: 'Настройки подключения'
+	    	font_size: '30sp'
+
+	    Label:
+	    	text: 'IP сервера'
+	    	font_size: '20sp'
+	    	halign: 'left'
+            valign: 'middle'
+            text_size: self.size
+
+	    TextInput:
+	    	id: ip_input
+	    	text: '192.168.0.0'
+	    	hint_text: '192.168.0.0'
+	    	font_size: '30sp'
+	    	multiline: False
+
+	    Label:
+	    	text: 'Порт'
+	    	font_size: '20sp'
+	    	halign: 'left'
+            valign: 'middle'
+            text_size: self.size
+
+	    TextInput:
+	    	id: port_input
+	    	text: '65432'
+	    	hint_text: '65432'
+	    	font_size: '30sp'
+	    	multiline: False
+	    	input_type: 'number'
+            input_filter: 'int'
+
+	    Label:
+	    	id: errors_label
+	    	font_size: '20sp'
+	    	color: 'red'
+
+	    Button:
+	    	id: connect_button
+	    	text: 'Подключиться'
+	    	background_color: 'lime'
+	    	font_size: '30sp'
+	    	on_release:
+	    		root.connect()
+
+	    Button:
+	    	text: 'Настройка элементов управления'
+	    	font_size: '30sp'
+	    	on_release:
+	    		root.to_control_settings()
+
+	    Button:
+	    	text: '<< Назад'
+	    	font_size: '30sp'
+	    	on_release:
+	    		root.to_controls()

@@ -1,0 +1,88 @@
+<ItemLabel@Label>:
+    size_hint_y: .4
+    font_size: '20sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<ControlsSettingsScreen>:
+
+    analog_gas_check: analog_gas_check
+    analog_brake_check: analog_brake_check
+    analog_clutch_check: analog_clutch_check
+    analog_wheel_check: analog_wheel_check
+    wheel_slider: wheel_slider
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: 'Настройки элементов управления'
+            size_hint_y: .2
+            font_size: '30sp'
+
+        GridLayout:
+            rows: 4
+            cols: 2
+            padding: 20
+            size_hint_y: .5
+
+            ItemLabel:
+                text: 'Аналог. газ'
+
+            CheckBox:
+                id: analog_gas_check
+                on_active:
+                    root.on_gas_active(self, self.active)
+
+            ItemLabel:
+                text: 'Аналог. тормоз'
+
+            CheckBox:
+                id: analog_brake_check
+                on_active:
+                    root.on_brake_active(self, self.active)
+
+            ItemLabel:
+                text: 'Аналог. сцепление'
+
+            CheckBox:
+                id: analog_clutch_check
+                on_active:
+                    root.on_clutch_active(self, self.active)
+
+            ItemLabel:
+                text: 'Аналог. руль'
+
+            CheckBox:
+                id: analog_wheel_check
+                on_active:
+                    root.on_wheel_active(self, self.active)
+
+        ItemLabel:
+            text: 'Чувствительность руля'
+            size_hint_y: .2
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: .2
+
+            Label:
+                font_size: '20sp'
+                text: str(wheel_slider.value) + f' гр. ({wheel_slider.value / 360:.1f} об.)'
+
+            Slider:
+                id: wheel_slider
+                min: 90
+                max: 1080
+                step: 1
+                orientation: 'horizontal'
+
+        Button:
+            text: 'Готово'
+            font_size: '30sp'
+            size_hint_y: .3
+            on_release:
+                root.to_settings()

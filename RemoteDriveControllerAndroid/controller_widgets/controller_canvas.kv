@@ -1,0 +1,145 @@
+#:import SteeringWheel controller_widgets.steering_wheel.SteeringWheel
+#:import GasPedal controller_widgets.pedal.GasPedal
+#:import BrakePedal controller_widgets.pedal.BrakePedal
+#:import ClutchPedal controller_widgets.pedal.ClutchPedal
+#:import Shifter controller_widgets.shifter.Shifter
+
+<ControlButton@Button>:
+    size_hint: None, None
+    size: 120, 120
+    border: 0, 0, 0, 0
+
+<ControllerCanvas>:
+
+    steering_wheel: steering_wheel
+    turn_left_arrow: turn_left_arrow
+    turn_right_arrow: turn_right_arrow
+    shifter: shifter
+    gas_pedal: gas_pedal
+    brake_pedal: brake_pedal
+    clutch_pedal: clutch_pedal
+    handbrake: handbrake
+    honk: honk
+    ignition: ignition
+    headlights: headlights
+    left_turn_signal: left_turn_signal
+    right_turn_signal: right_turn_signal
+    emergency_signal: emergency_signal
+
+    SteeringWheel:
+        id: steering_wheel
+        size: 500, 500
+        pos_hint: {'x': .15, 'y': .2}
+
+    ControlButton:
+        id: turn_left_arrow
+        size: 250, 250
+        background_normal: 'assets/left_arrow.png'
+        background_down: 'assets/left_arrow_pressed.png'
+        pos_hint: {'x': .15, 'y': .25}
+        on_press:
+            root.turn_val = 0
+        on_release:
+            root.turn_val = 0.5
+
+    ControlButton:
+        id: turn_right_arrow
+        size: 250, 250
+        background_normal: 'assets/right_arrow.png'
+        background_down: 'assets/right_arrow_pressed.png'
+        pos_hint: {'x': .3, 'y': .25}
+        on_press:
+            root.turn_val = 1
+        on_release:
+            root.turn_val = 0.5
+
+    Shifter:
+        id: shifter
+        size: 100, 300
+        pos_hint: {'right': .9, 'y': .6}
+
+    GasPedal:
+        id: gas_pedal
+        size: 200, 400
+        pos_hint: {'right': .98, 'y': .05}
+
+    BrakePedal:
+        id: brake_pedal
+        size: 200, 200
+        pos_hint: {'y': .05}
+
+    ClutchPedal:
+        id: clutch_pedal
+        size: 200, 300
+        pos_hint: {'x': .02, 'y': .05}
+
+    ControlButton:
+        id: handbrake
+        size: 150, 150
+        background_normal: 'assets/handbrake_icon.png'
+        background_down: 'assets/handbrake_icon_pressed.png'
+        pos_hint: {'x': .75, 'y': .4}
+        on_press:
+            root.handbrake_val = 1
+        on_release:
+            root.handbrake_val = 0
+
+    ControlButton:
+        id: honk
+        background_normal: 'assets/honk_icon.png'
+        background_down: 'assets/honk_icon_pressed.png'
+        pos_hint: {'x': .4, 'y': .05}
+        on_press:
+            root.honk_val = 1
+        on_release:
+            root.honk_val = 0
+
+    ControlButton:
+        id: ignition
+        background_normal: 'assets/ignition_icon.png'
+        background_down: 'assets/ignition_icon_pressed.png'
+        pos_hint: {'x': .5, 'y': .05}
+        on_press:
+            root.ignition_val = 1
+        on_release:
+            root.ignition_val = 0
+
+    ControlButton:
+        id: headlights
+        background_normal: 'assets/headlights_icon.png'
+        background_down: 'assets/headlights_icon_pressed.png'
+        pos_hint: {'x': .05, 'y': .7}
+        on_press:
+            root.headlights_val = 1
+        on_release:
+            root.headlights_val = 0
+
+    ControlButton:
+        id: left_turn_signal
+        background_normal: 'assets/left_signal_icon.png'
+        background_down: 'assets/left_signal_icon_pressed.png'
+        pos_hint: {'x': .05, 'y': .85}
+        on_press:
+            root.left_turn_signal_val = 1
+        on_release:
+            root.left_turn_signal_val = 0
+
+    ControlButton:
+        id: emergency_signal
+        background_normal: 'assets/emergency_signal_icon.png'
+        background_down: 'assets/emergency_signal_icon_pressed.png'
+        pos_hint: {'x': .15, 'y': .85}
+        on_press:
+            root.emergency_signal_val = 1
+        on_release:
+            root.emergency_signal_val = 0
+
+    ControlButton:
+        id: right_turn_signal
+        background_normal: 'assets/right_signal_icon.png'
+        background_down: 'assets/right_signal_icon_pressed.png'
+        pos_hint: {'x': .25, 'y': .85}
+        on_press:
+            root.right_turn_signal_val = 1
+        on_release:
+            root.right_turn_signal_val = 0

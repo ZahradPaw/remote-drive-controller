@@ -1,0 +1,37 @@
+#:import ControllerCanvas controller_widgets.controller_canvas.ControllerCanvas
+
+<ControlScreen>:
+
+    status_label: status_label
+    controller_canvas: controller_canvas
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+            padding: 20
+            spacing: 20
+
+            Label:
+                id: status_label
+                text: "Не подключено"
+                size_hint: 1, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                font_size: '20sp'
+
+            Button:
+                size_hint: None, None
+                size: 150, 150
+                border: 0, 0, 0, 0
+                pos_hint: {'right': 0.95, 'top': 0.95}
+                background_normal: 'assets/settings_icon.png'
+                background_down: 'assets/settings_icon_pressed.png'
+                on_release:
+                    root.open_settings()
+
+        ControllerCanvas:
+            id: controller_canvas
+            size_hint: 1, 1
