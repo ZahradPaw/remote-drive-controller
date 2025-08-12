@@ -1,6 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-# pyinstaller main.spec --clean --noconfirm    - для сборки
+# pyinstaller main.spec --clean --noconfirm
 
 a = Analysis(
     ['main.py'],

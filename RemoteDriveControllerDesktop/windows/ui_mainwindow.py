@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'server_controller/mainwindow.ui'
+# Form implementation generated from reading ui file 'windows/mainwindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(995, 645)
+        MainWindow.resize(816, 664)
         MainWindow.setStyleSheet("QWidget {\n"
 "    background-color: qlineargradient(x1:1, y1:1, x2:1, y2:0, stop:0 rgb(30, 30, 30), stop: 0.8 rgb(30, 30, 30), stop:1 rgb(16, 150, 230));\n"
 "    font-family: \"Calibri\";\n"
@@ -64,11 +64,12 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.title_label)
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setTabletTracking(False)
-        self.label_2.setTextFormat(QtCore.Qt.TextFormat.AutoText)
+        self.label_2.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
+        self.label_2.setTextFormat(QtCore.Qt.TextFormat.RichText)
         self.label_2.setScaledContents(False)
         self.label_2.setWordWrap(True)
         self.label_2.setIndent(0)
-        self.label_2.setOpenExternalLinks(False)
+        self.label_2.setOpenExternalLinks(True)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         spacerItem = QtWidgets.QSpacerItem(20, 80, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
@@ -103,9 +104,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Driver Remote Controller"))
-        self.title_label.setText(_translate("MainWindow", "Drive Remote Controller"))
-        self.label_2.setText(_translate("MainWindow", "Для подключения контроллера необходимо установить на телефон приложение контроллера. После этого в приложении нужно указать IP текущего ПК, а также порт, который должен совпадать с портом подключения в настройках. Для работы аналогового управления неободима установка драйвера VJoy."))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Remote Drive Controller"))
+        self.title_label.setText(_translate("MainWindow", "Remote Drive Controller"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"justify\">Для подключения контроллера необходимо установить на телефон приложение контроллера. После этого в приложении нужно указать IP текущего ПК, а также порт, который должен совпадать с портом подключения в настройках. Для работы аналогового управления неободима установка драйвера VJoy, который можно скачать <a href=\"https://github.com/shauleiz/vJoy/releases\">здесь</a>.</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "Статус:"))
         self.connect_status_label.setText(_translate("MainWindow", "Контроллер не подключен"))
         self.connect_button.setText(_translate("MainWindow", "Подключиться"))

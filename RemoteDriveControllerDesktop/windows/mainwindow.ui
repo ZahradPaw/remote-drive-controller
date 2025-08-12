@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>995</width>
-    <height>645</height>
+    <width>816</width>
+    <height>664</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Driver Remote Controller</string>
+   <string>Remote Drive Controller</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
@@ -75,7 +75,7 @@ QPushButton#settings_button:hover {
       <item>
        <widget class="QLabel" name="title_label">
         <property name="text">
-         <string>Drive Remote Controller</string>
+         <string>Remote Drive Controller</string>
         </property>
         <property name="margin">
          <number>10</number>
@@ -87,11 +87,14 @@ QPushButton#settings_button:hover {
         <property name="tabletTracking">
          <bool>false</bool>
         </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
         <property name="text">
-         <string>Для подключения контроллера необходимо установить на телефон приложение контроллера. После этого в приложении нужно указать IP текущего ПК, а также порт, который должен совпадать с портом подключения в настройках. Для работы аналогового управления неободима установка драйвера VJoy.</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Для подключения контроллера необходимо установить на телефон приложение контроллера. После этого в приложении нужно указать IP текущего ПК, а также порт, который должен совпадать с портом подключения в настройках. Для работы аналогового управления неободима установка драйвера VJoy, который можно скачать &lt;a href=&quot;https://github.com/shauleiz/vJoy/releases&quot;&gt;здесь&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
-         <enum>Qt::AutoText</enum>
+         <enum>Qt::RichText</enum>
         </property>
         <property name="scaledContents">
          <bool>false</bool>
@@ -106,7 +109,7 @@ QPushButton#settings_button:hover {
          <number>0</number>
         </property>
         <property name="openExternalLinks">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>
