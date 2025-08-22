@@ -28,15 +28,12 @@ class MainApp(App):
 
     def on_connection(self):
         """Функция подключения"""
+        self.storage_loader.save()
         self.server_connector.toggle_connection()
 
     def on_start(self):
         self.storage_loader.load()
         self.control_screen.update_widgets()
-
-    def on_stop(self):
-        self.server_connector.disconnect_from_server()
-        self.storage_loader.save()
 
 
 if __name__ == '__main__':

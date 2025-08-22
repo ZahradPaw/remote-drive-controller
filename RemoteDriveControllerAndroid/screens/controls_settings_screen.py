@@ -2,6 +2,7 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 from settings import Settings, InputType
+from utils import StorageLoader
 
 Builder.load_file("screens/controls_settings_screen.kv")
 
@@ -14,6 +15,8 @@ class ControlsSettingsScreen(Screen):
     analog_clutch_check = ObjectProperty()
     analog_wheel_check = ObjectProperty()
     wheel_slider = ObjectProperty()
+
+    storage_loader = StorageLoader()
 
     def to_settings(self, instance=None):
         Settings.steering_max_value = self.wheel_slider.value
@@ -53,3 +56,8 @@ class ControlsSettingsScreen(Screen):
         else:
             Settings.wheel_input_type = InputType.DIGITAL
             self.wheel_slider.disabled = True
+
+    def on_leave(self, *args):
+        # Сохранение настроек
+        self.storage_loader.save()
+        return super().on_leave(*args)

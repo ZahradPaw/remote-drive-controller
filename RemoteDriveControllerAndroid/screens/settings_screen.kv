@@ -25,7 +25,7 @@
 	    	id: ip_input
 	    	text: '192.168.0.0'
 	    	hint_text: '192.168.0.0'
-	    	font_size: '30sp'
+	    	font_size: '25sp'
 	    	multiline: False
 
 	    Label:
@@ -39,7 +39,7 @@
 	    	id: port_input
 	    	text: '65432'
 	    	hint_text: '65432'
-	    	font_size: '30sp'
+	    	font_size: '25sp'
 	    	multiline: False
 	    	input_type: 'number'
             input_filter: 'int'
@@ -53,18 +53,18 @@
 	    	id: connect_button
 	    	text: 'Подключиться'
 	    	background_color: 'lime'
-	    	font_size: '30sp'
+	    	font_size: '25sp'
 	    	on_release:
 	    		root.connect()
 
 	    Button:
 	    	text: 'Настройка элементов управления'
-	    	font_size: '30sp'
+	    	font_size: '25sp'
 	    	on_release:
 	    		root.to_control_settings()
 
 	    Button:
 	    	text: '<< Назад'
-	    	font_size: '30sp'
+	    	font_size: '25sp'
 	    	on_release:
 	    		root.to_controls()
